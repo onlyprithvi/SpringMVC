@@ -46,7 +46,7 @@
 						<scanIntervalSeconds>0</scanIntervalSeconds>
 						<reload>manual</reload>
 						<webApp>
-							<contextPath>/</contextPath>
+							<contextPath>/store</contextPath>
 						</webApp>
 					</configuration>
 				</plugin>
