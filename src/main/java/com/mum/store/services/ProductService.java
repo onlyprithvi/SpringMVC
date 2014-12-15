@@ -7,7 +7,7 @@ import com.mum.store.domain.Product;
 public interface ProductService {
 	public List<Product> viewAllActiveProducts();
 
-	public Product viewProductById(String id);
+	public Product viewProductById(long id);
 
 	public List<Product> viewAllProducts();
 

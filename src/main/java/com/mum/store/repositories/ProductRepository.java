@@ -11,6 +11,6 @@ import com.mum.store.domain.Product;
 @Repository
 public interface ProductRepository extends CrudRepository<Product, Long> {
 
-	@Query("Select p form product p")
-	public List<Product> viewAllActiveProducts();
+	Product findById(long id);
+
 }

@@ -25,6 +25,7 @@
       <property name="packagesToScan" value="com.mum.store.domain" />
      
      <!--  provider-specific initialization,etc. -->
+       <!--  provider-specific initialization,etc. -->
       <property name="jpaVendorAdapter">
          <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
       </property>
@@ -45,13 +46,7 @@
       </property>
    </bean>
  
- <!-- H2 database CONSOLE -->
- <bean id="h2Server" class="org.h2.tools.Server" factory-method="createTcpServer" init-method="start" destroy-method="stop" depends-on="h2WebServer">
-    <constructor-arg value="-tcp,-tcpAllowOthers,-tcpPort,9092"/>
-</bean>
-<bean id="h2WebServer" class="org.h2.tools.Server" factory-method="createWebServer" init-method="start" destroy-method="stop">
-    <constructor-arg value="-web,-webAllowOthers,-webPort,8082"/>
-</bean>
+ 
  
  <!-- database configuration -->
      <!-- <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
@@ -72,9 +67,9 @@
    </bean>
    
    <!-- Scan for  transaction-based resources -->
-   	<context:component-scan base-package="com.mum.store.service" />
+   	<context:component-scan base-package="com.mum.store.services" />
   	<context:component-scan base-package="com.mum.store.domain" />
-    <context:component-scan base-package="com.mum.store.repository" />
+    <context:component-scan base-package="com.mum.store.repositories" />
     
    <tx:annotation-driven transaction-manager="transactionManager"/>
  

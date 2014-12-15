@@ -2,21 +2,26 @@ package com.mum.store.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 import com.mum.store.domain.enums.ProductStatus;
 
-@Entity(name = "product")
+@Entity(name = "PRODUCT")
 public class Product {
-
-	private int id;
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private long id;
 	private String name;
 	private String description;
 
 	@Column(name = "product_status")
-	private ProductStatus productStatus;
+	private String productStatus;
 	private double price;
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
@@ -40,11 +45,11 @@ public class Product {
 		this.description = description;
 	}
 
-	public ProductStatus getProductStatus() {
+	public String getProductStatus() {
 		return productStatus;
 	}
 
-	public void setProductStatus(ProductStatus productStatus) {
+	public void setProductStatus(String productStatus) {
 		this.productStatus = productStatus;
 	}
 

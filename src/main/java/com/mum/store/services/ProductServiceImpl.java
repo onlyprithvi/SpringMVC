@@ -23,13 +23,13 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public List<Product> viewAllActiveProducts() {
-		return repository.viewAllActiveProducts();
+		return (List<Product>) repository.findAll();
 	}
 
 	@Override
-	public Product viewProductById(String id) {
+	public Product viewProductById(long id) {
 		// TODO Auto-generated method stub
-		return null;
+		return repository.findOne(id);
 	}
 
 	@Override
