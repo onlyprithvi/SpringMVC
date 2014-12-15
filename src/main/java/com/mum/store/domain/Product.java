@@ -1,7 +1,10 @@
 package com.mum.store.domain;
 
+import javax.persistence.Entity;
+
 import com.mum.store.domain.enums.ProductStatus;
 
+@Entity
 public class Product {
 	private int id;
 	private String name;
