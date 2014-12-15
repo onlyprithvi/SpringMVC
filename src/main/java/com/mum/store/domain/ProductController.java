@@ -11,6 +11,6 @@ public class ProductController {
 	public String list(Model model) {
 
 		model.addAttribute("message","hello from spring");
-		return "welcome";
+		return "home";
 	}
 }
