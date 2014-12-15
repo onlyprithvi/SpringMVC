@@ -1,14 +1,18 @@
 package com.mum.store.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 
 import com.mum.store.domain.enums.ProductStatus;
 
-@Entity
+@Entity(name = "product")
 public class Product {
+
 	private int id;
 	private String name;
 	private String description;
+
+	@Column(name = "product_status")
 	private ProductStatus productStatus;
 	private double price;
 

@@ -2,16 +2,15 @@ package com.mum.store.repositories;
 
 import java.util.List;
 
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
 import com.mum.store.domain.Product;
 
-public interface ProductRepository{
+@Repository
+public interface ProductRepository extends CrudRepository<Product, Long> {
+
+	@Query("Select p form product p")
 	public List<Product> viewAllActiveProducts();
-
-	public Product viewProductById(String id);
-
-	public List<Product> viewAllProducts();
-
-	public List<Product> viewProductIdByTag();
-
-	public void addProducts(Product p);
 }
