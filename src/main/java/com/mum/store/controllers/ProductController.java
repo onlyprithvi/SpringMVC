@@ -1,4 +1,4 @@
-package com.mum.store.domain;
+package com.mum.store.controllers;
 
 
 import org.springframework.stereotype.Controller;
@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ProductController {
 	@RequestMapping("/")
 	public String list(Model model) {
-
-		model.addAttribute("message","hello from spring");
 		return "home";
 	}
 }
