@@ -10,10 +10,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 
-<link href="<c:url value="/resources/style/jquery-te-1.4.0.css" />"
-	rel="stylesheet">
-
-
 <script src="//tinymce.cachefly.net/4.1/tinymce.min.js"></script>
 <script>
 	tinymce.init({
@@ -62,7 +58,7 @@
 						<td colspan="2">Add Description</td>
 					</tr>
 					<tr>
-						<td colspan="3"><textarea>
+						<td colspan="3"><textarea name="description">
 								
 							</textarea></td>
 					</tr>
