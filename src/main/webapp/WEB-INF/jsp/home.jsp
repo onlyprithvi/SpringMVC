@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -11,11 +12,10 @@
 <title>Project404</title>
 </head>
 <body>
-
-
-
+<tiles:insertDefinition name="defaultTemplate">
+    <tiles:putAttribute name="body">
 	<div class="wrapper">
-		<div class="header" id="top">
+		<div class="headerrr" id="top">
 			<div class="userlogin">
 				<ul>
 					<li class="disqus"><a href="recommend">Recommend</a></li>
@@ -112,5 +112,7 @@
 
 		</div>
 	</div>
+	   </tiles:putAttribute>
+</tiles:insertDefinition>
 </body>
 </html>
