@@ -27,17 +27,17 @@ public class ProductController {
 		return "home";
 	}
 	
-//	@RequestMapping(name="/add",method=RequestMethod.GET)
+	@RequestMapping(value="/addProduct",method=RequestMethod.GET)
 	public String addProduct(@ModelAttribute("newProduct") Product newProduct,BindingResult result){
 		return "addProduct";
 	}
 	
-//	@RequestMapping(name="/add",method=RequestMethod.POST)
+	@RequestMapping(value="/addProduct",method=RequestMethod.POST)
 	public String saveProduct(@ModelAttribute("newProduct") @Valid Product newProduct,BindingResult result){
 		if(result.hasErrors())
 			return "addProduct";
 		else
-			return "redirect:/";
+			return "redirect:/dsf";
 	}
 	
 	@RequestMapping("/viewById")
