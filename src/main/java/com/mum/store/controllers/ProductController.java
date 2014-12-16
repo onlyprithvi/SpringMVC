@@ -40,10 +40,11 @@ public class ProductController {
 			return "redirect:/dsf";
 	}
 	
-	@RequestMapping("/viewById")
-	public ModelAndView viewProductByID(@RequestParam("productId") String id){
-		ModelAndView mv= new ModelAndView();
-	
+	@RequestMapping("/viewdetails")
+	public ModelAndView viewProductByID(@RequestParam("product") String id) {
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("product", service.viewProductById(Long.parseLong(id)));
+		mv.setViewName("viewDetails");
 		return mv;
 	}
 	

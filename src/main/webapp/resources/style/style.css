@@ -1,4 +1,4 @@
-@charset "utf-8"; 
+@charset "utf-8";
 
 fieldset, img {
 	border: 0
@@ -739,6 +739,23 @@ input {
 	background: #fff
 }
 
+.productDetailbox {
+	
+	margin-left: 100px;
+	margin-right: 100px;
+	width:700px;
+	padding: 3px;
+	min-height: 280px;
+	height: auto;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	-webkit-box-shadow: #666 0 0 6px;
+	-moz-box-shadow: #666 0 0 6px;
+	box-shadow: #666 0 0 6px;
+	background: #fff
+}
+
 productboxInner {
 	float: left;
 	width: 100%;
@@ -827,6 +844,12 @@ productboxInner {
 	float: right;
 	width: 90px;
 	padding-right: 10px
+}
+
+.buttonholderView {
+	float: right;
+	width:150px;
+	padding-right: 300px
 }
 
 .viewdetails {
@@ -2643,7 +2666,11 @@ select {
 
 100%{
 -webkit-transform
+
+
 :rotate(360deg)
+
+
 }
 }
 @
@@ -2653,7 +2680,11 @@ select {
 
 100%{
 -moz-transform
+
+
 :rotate(360deg)
+
+
 }
 }
 .labeled {
