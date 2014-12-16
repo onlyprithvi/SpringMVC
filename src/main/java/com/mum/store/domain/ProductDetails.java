@@ -20,6 +20,15 @@ public class ProductDetails {
 	private User seller;
 	private String reservedOrOpen;
 	private Date postedDate;
+	private String detail;
+	
+	public String getDetail() {
+		return detail;
+	}
+
+	public void setDetail(String detail) {
+		this.detail = detail;
+	}
 
 	public long getId() {
 		return id;

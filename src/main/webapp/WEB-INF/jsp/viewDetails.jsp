@@ -59,8 +59,6 @@
 							is a detail descthis is a detail descthis is a detail descthis is
 							a detail descthis is a detail descthis is a detail descthis is a
 							detail descthis is a detail descthis is a detail desc</div>
-
-
 					</div>
 
 				</div>
