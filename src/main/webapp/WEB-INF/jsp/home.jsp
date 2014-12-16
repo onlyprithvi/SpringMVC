@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-    <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -12,10 +11,11 @@
 <title>Project404</title>
 </head>
 <body>
-<tiles:insertDefinition name="defaultTemplate">
-    <tiles:putAttribute name="body">
+
+
+
 	<div class="wrapper">
-		<div class="headerrr" id="top">
+		<div class="header" id="top">
 			<div class="userlogin">
 				<ul>
 					<li class="disqus"><a href="recommend">Recommend</a></li>
@@ -33,86 +33,28 @@
 	<div class="contentwrapper">
 		<div id="main_data">
 			<div class="content">
-				<div class="productbox">
-					<img src="<c:url value="/resources/images/banner.png" />"
-						height="240" width="240">
-					<div class="productdesc">
-						<h3>Title</h3>
-						<h2>desc desc</h2>
-						<span class="save">Price: Rs.450</span>
-						<div class="moredetails">
-							<div class="seperator">
-								<div class="buttonholder">
-									<a href="viewdetails" class="viewdetails">View Details</a>
+
+				<c:forEach var="product" items="${productList}">
+					<div class="productbox">
+						<img src="<c:url value="/resources/images/banner.png" />"
+							height="240" width="240">
+						<div class="productdesc">
+							<h3>${product.name} </h3>
+							<h2>${product.description}</h2>
+							<span class="save">Price: $ ${product.price} }</span>
+							<div class="moredetails">
+								<div class="seperator">
+									<div class="buttonholder">
+										<a href="viewdetails?product=${product.id}" class="viewdetails">View Details</a>
+									</div>
 								</div>
-							</div>
-							<br>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="productbox">
-				<img src="<c:url value="/resources/images/banner.png" />"
-					height="240" width="240">
-				<div class="productdesc">
-					<h3>Title</h3>
-					<h2>desc desc</h2>
-					<span class="save">Price: Rs.450</span>
-					<div class="moredetails">
-						<div class="seperator">
-							<div class="buttonholder">
-								<a href="viewdetails" class="viewdetails">View Details</a>
+								<br>
 							</div>
 						</div>
-						<br>
 					</div>
-				</div>
-
+				</c:forEach>
 			</div>
-
-			<div class="productbox">
-				<img src="<c:url value="/resources/images/banner.png" />"
-					height="240" width="240">
-				<div class="productdesc">
-					<h3>Title</h3>
-					<h2>desc desc</h2>
-					<span class="save">Price: Rs.450</span>
-					<div class="moredetails">
-						<div class="seperator">
-							<div class="buttonholder">
-								<a href="viewdetails" class="viewdetails">View Details</a>
-							</div>
-						</div>
-						<br>
-					</div>
-				</div>
-			</div>
-
-
-			<div class="productbox">
-				<img src="<c:url value="/resources/images/banner.png" />"
-					height="240" width="240">
-				<div class="productdesc">
-					<h3>Title</h3>
-					<h2>desc desc</h2>
-					<span class="save">Price: Rs.450</span>
-					<div class="moredetails">
-						<div class="seperator">
-							<div class="buttonholder">
-								<a href="viewdetails" class="viewdetails">View Details</a>
-							</div>
-						</div>
-						<br>
-					</div>
-				</div>
-			</div>
-
-
-
 		</div>
 	</div>
-	   </tiles:putAttribute>
-</tiles:insertDefinition>
 </body>
 </html>

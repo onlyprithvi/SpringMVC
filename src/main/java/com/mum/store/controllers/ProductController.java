@@ -9,6 +9,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.mum.store.domain.Product;
 import com.mum.store.services.ProductService;
@@ -21,7 +23,6 @@ public class ProductController {
 
 	@RequestMapping("/")
 	public String list(Model model) {
-//		System.out.println(service.viewAllActiveProducts());
 		return "home";
 	}
 	
@@ -36,6 +37,13 @@ public class ProductController {
 			return "addProduct";
 		else
 			return "redirect:/";
+	}
+	
+	@RequestMapping("/viewAll")
+	public ModelAndView viewProductByID(@RequestParam("productId") String id){
+		ModelAndView mv= new ModelAndView();
+		
+		return mv;
 	}
 	
 }
