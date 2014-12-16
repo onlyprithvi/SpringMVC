@@ -24,7 +24,7 @@
 		<tiles:putAttribute name="body">
 			<h1>Add Product</h1>
 
-			<form:form method="POST" commandName="newProduct" action="add">
+			<form:form modelAttribute="newProduct" action="addProduct" enctype="multipart/form-data">
 				<table>
 					<tr>
 						<td>Product Name:</td>
@@ -45,14 +45,14 @@
 						<td>Product Status:</td>
 						<td><form:select path="productStatus">
 								<form:option value="">--Select</form:option>
-								<form:options />
+								<form:options items="${status}" />
 							</form:select></td>
 						<td><form:errors path="productStatus" /></td>
 					</tr>
 					<tr>
 						<td>Product Image:</td>
-						<td><form:input path="imagePath" type="file" /></td>
-						<td><form:errors path="imagePath" /></td>
+						<td><input type="file" name="file"></td>
+						<td></td>
 					</tr>
 					<tr>
 						<td colspan="2">Add Description</td>

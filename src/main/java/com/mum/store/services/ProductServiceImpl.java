@@ -47,6 +47,7 @@ public class ProductServiceImpl implements ProductService {
 	@Override
 	public void addProducts(Product p) {
 		// TODO Auto-generated method stub
+        repository.save(p);
 
 	}
 
