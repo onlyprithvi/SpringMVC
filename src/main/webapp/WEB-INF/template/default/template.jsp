@@ -8,7 +8,6 @@
         margin:0px;
         padding:0px;
         height:100%;
-        overflow:hidden;
     }
  
     .page {
@@ -16,8 +15,8 @@
         position:relative;
     }
      
-    .header {
-        padding:10px;
+    .headerTemplate {
+        padding:35px;
         width:100%;
         text-align:center;
         background: blue;

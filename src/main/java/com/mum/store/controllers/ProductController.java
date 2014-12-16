@@ -23,15 +23,16 @@ public class ProductController {
 
 	@RequestMapping("/")
 	public String list(Model model) {
+		model.addAttribute(service.viewAllActiveProducts());
 		return "home";
 	}
 	
-	@RequestMapping(name="/add",method=RequestMethod.GET)
+//	@RequestMapping(name="/add",method=RequestMethod.GET)
 	public String addProduct(@ModelAttribute("newProduct") Product newProduct,BindingResult result){
 		return "addProduct";
 	}
 	
-	@RequestMapping(name="/add",method=RequestMethod.POST)
+//	@RequestMapping(name="/add",method=RequestMethod.POST)
 	public String saveProduct(@ModelAttribute("newProduct") @Valid Product newProduct,BindingResult result){
 		if(result.hasErrors())
 			return "addProduct";
@@ -39,10 +40,10 @@ public class ProductController {
 			return "redirect:/";
 	}
 	
-	@RequestMapping("/viewAll")
+	@RequestMapping("/viewById")
 	public ModelAndView viewProductByID(@RequestParam("productId") String id){
 		ModelAndView mv= new ModelAndView();
-		
+	
 		return mv;
 	}
 	

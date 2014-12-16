@@ -11,8 +11,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<tiles:insertDefinition name="defaultTemplate">
-    <tiles:putAttribute name="body">
+<%-- <tiles:insertDefinition name="defaultTemplate">
+    <tiles:putAttribute name="body"> --%>
 <h1>Add Product</h1>
 
 	<form:form method="POST" commandName="newProduct" action="add">
@@ -52,7 +52,7 @@
 			</tr>
 		</table>
 	</form:form>
-   </tiles:putAttribute>
-</tiles:insertDefinition>
+<%--    </tiles:putAttribute>
+</tiles:insertDefinition --%>>
 </body>
 </html>
