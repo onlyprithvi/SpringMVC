@@ -19,7 +19,7 @@ public class Product {
     private Boolean reservedOrOpen;
 
     @Column(name = "is_approved_by_admin")
-    private Boolean isApprovedByAdmin;
+    private Boolean isApprovedByAdmin =false;
 
     @OneToOne(cascade = {CascadeType.ALL})
     @JoinColumn(name ="product_detail_id")

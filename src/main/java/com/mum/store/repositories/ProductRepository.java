@@ -13,4 +13,7 @@ public interface ProductRepository extends CrudRepository<Product, Long> {
 
 	Product findById(long id);
 
+	@Query("SELECT p from PRODUCT p where p.isApprovedByAdmin=true")
+	List<Product> getAllApprovedProducts();
+
 }
