@@ -31,7 +31,7 @@ public class AdministrationController {
         Product product=service.getProductById(id);
         product.setIsApprovedByAdmin(true);
         service.save(product);
-        return "redirect:/";
+        return "redirect:/admin";
     }
 
     @RequestMapping("/reject")
@@ -39,6 +39,6 @@ public class AdministrationController {
         Product product=service.getProductById(id);
         product.setIsApprovedByAdmin(null);
         service.save(product);
-        return "redirect:/";
+        return "redirect:/admin";
     }
 }
