@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
+<beans:beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans" 
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xmlns:security="http://www.springframework.org/schema/security"
@@ -9,19 +10,34 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
 
-	<security:http auto-config="true">
-		<security:intercept-url pattern="/products/add"
-			access="ROLE_ADMIN" />
+    <security:global-method-security pre-post-annotations="enabled"></security:global-method-security>
+
+	<security:http auto-config="true" >
+		<security:intercept-url pattern="/"
+			access="ROLE_USER" />
 		<security:form-login login-page="/login"
-			default-target-url="/products/add" authentication-failure-url="/loginfailed" />
+			default-target-url="/" 
+			authentication-failure-url="/loginfailed" 
+			username-parameter="username"
+			password-parameter="password"
+			/>
 		<security:logout logout-success-url="/logout" />
 	</security:http>
-	<security:authentication-manager>
+	<!-- <security:authentication-manager>
 		<security:authentication-provider>
 			<security:user-service>
 				<security:user name="Admin" password="Admin123"
 					authorities="ROLE_ADMIN" />
 			</security:user-service>
 		</security:authentication-provider>
+	</security:authentication-manager> -->
+	 <security:authentication-manager erase-credentials="false">
+		<security:authentication-provider>
+			<security:jdbc-user-service 
+			data-source-ref="dataSource"
+			users-by-username-query="select username, password,enabled from user where username=?"
+			authorities-by-username-query="select username, role from user where username=?"
+			 />
+		</security:authentication-provider>
 	</security:authentication-manager>
-</beans>
+</beans:beans>
