@@ -27,14 +27,6 @@ USE springmvc;
 
 
 
-INSERT INTO product(NAME,description,product_status,price) VALUES
-('Iron','New Iron','New',1000),
-('Cooker','Cooker','New',1000),
-('Boiler','Boiler','New',1000),
-('Gas','Gas','New',1000);
-
-
-
 	CREATE TABLE USER(
       id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
       first_name VARCHAR(255),
