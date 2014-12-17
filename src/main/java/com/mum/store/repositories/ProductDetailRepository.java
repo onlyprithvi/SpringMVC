@@ -1,15 +1,12 @@
 package com.mum.store.repositories;
 
-import java.util.List;
-
-import org.springframework.data.jpa.repository.Query;
+import com.mum.store.domain.Product;
+import com.mum.store.domain.ProductDetails;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.mum.store.domain.Product;
-
 @Repository
-public interface ProductRepository extends CrudRepository<Product, Long> {
+public interface ProductDetailRepository extends CrudRepository<ProductDetails, Long> {
 
 	Product findById(long id);
 
