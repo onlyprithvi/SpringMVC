@@ -19,7 +19,9 @@ import com.mum.store.services.ProductService;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Random;
 
 @Controller
 public class ProductController {
@@ -54,21 +56,20 @@ public class ProductController {
     public String saveProduct(@ModelAttribute("newProduct") @Valid Product newProduct,
                                 BindingResult result, @RequestParam("file") MultipartFile mfile,
                                 Model model, HttpServletRequest request) {
-
         if (result.hasErrors()) {
             model.addAttribute("status", status);
             return "addProduct";
         }
-
         else {
             MultipartFile productImage = mfile;
-            String rootDirectory = request.getSession().getServletContext()
-                    .getRealPath("/");
+            String rootDirectory = request.getSession().getServletContext().getRealPath("/");
             if (productImage != null && !productImage.isEmpty()) {
                 try {
-                    File file = new File(rootDirectory + "\\resources\\images\\"+ newProduct.getId() + ".png");
+                    int randNumber=new Random().nextInt();
+                    String filePath = rootDirectory + "\\resources\\images\\"+ randNumber + ".png";
+                    File file = new File(filePath);
                     productImage.transferTo(file);
-                    newProduct.getDetails().setImagePath("\\resources\\images\\" + newProduct.getId() + ".png");
+                    newProduct.getDetails().setImagePath("resources/images/" + randNumber + ".png");
                 } catch (Exception e) {
                     throw new RuntimeException("Product Image saving failed", e);
                 }

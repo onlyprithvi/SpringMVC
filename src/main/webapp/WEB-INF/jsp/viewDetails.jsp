@@ -31,7 +31,7 @@
 			<div id="main_data" align="center">
 				<div class="content">
 					<div class="productDetailbox">
-						<img src="<c:url value="resources/images/banner.png" />"
+						<img src="<c:url value="${product.details.imagePath}" />"
 							height="200" width="200">
 						<div class="buttonholderView">
 							<a href="?reserve=${product.id}" class="viewdetails">Reserve</a>

@@ -32,7 +32,7 @@
 
 					<c:forEach var="product" items="${productList}">
 						<div class="productbox">
-							<img src="<c:url value="resources/images/banner.png" />"
+							<img src="<c:url value="${product.details.imagePath}" />"
 								 height="240" width="240">
 							<div class="productdesc">
 								<h3>${product.name}</h3>
