@@ -36,8 +36,8 @@
 								 height="240" width="240">
 							<div class="productdesc">
 								<h3>${product.name}</h3>
-								<h2>${product.description}</h2>
-								<span class="save">Price: $ ${product.price} }</span>
+								<h2>${product.details.detail}</h2>
+								<span class="save">Price: $ ${product.details.price}</span>
 								<div class="moredetails">
 									<div class="seperator">
 										<div class="buttonholder">
