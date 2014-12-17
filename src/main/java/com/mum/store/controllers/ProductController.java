@@ -3,6 +3,7 @@ package com.mum.store.controllers;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
+import com.mum.store.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,6 +29,8 @@ public class ProductController {
 
 	@Autowired
 	ProductService service;
+    @Autowired
+    UserService userService;
     List<String> status = new ArrayList<String>();
 
     public ProductController() {
@@ -56,6 +59,8 @@ public class ProductController {
     public String saveProduct(@ModelAttribute("newProduct") @Valid Product newProduct,
                                 BindingResult result, @RequestParam("file") MultipartFile mfile,
                                 Model model, HttpServletRequest request) {
+
+
         if (result.hasErrors()) {
             model.addAttribute("status", status);
             return "addProduct";

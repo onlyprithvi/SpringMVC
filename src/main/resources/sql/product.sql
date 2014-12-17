@@ -2,14 +2,15 @@ CREATE DATABASE IF NOT EXISTS springmvc;
 
 USE springmvc;
 
-    	 CREATE TABLE product (
-          id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-          NAME VARCHAR(30) NOT NULL,
-           reservedOrOpenStatus TINYINT(1),
-          is_approved_by_admin  TINYINT(1) DEFAULT FALSE ,
-           `product_detail_id` INT(11) DEFAULT NULL,
-          KEY `FK23254A0CAF274936` (`product_detail_id`),
-          CONSTRAINT `FK23254A0CAF274936` FOREIGN KEY (`id`) REFERENCES `product_detail` (`id`)
+    	  CREATE TABLE product (
+            id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+            NAME VARCHAR(30) NOT NULL,
+            reservedOrOpenStatus TINYINT(1),
+            is_approved_by_admin  TINYINT(1) DEFAULT FALSE ,
+            `product_detail_id` INT(6) NOT NULL,
+            owner_id INT(6) default NULL,
+            FOREIGN KEY(owner_id) REFERENCES `user`(`id`),
+            FOREIGN KEY(product_detail_id) REFERENCES product_detail(`id`)
 
 	    );
 

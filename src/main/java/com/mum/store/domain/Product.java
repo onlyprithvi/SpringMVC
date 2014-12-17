@@ -25,6 +25,18 @@ public class Product {
     @JoinColumn(name ="product_detail_id")
     private ProductDetails details;
 
+    @OneToOne(cascade = {CascadeType.ALL})
+    @JoinColumn(name ="owner_id")
+    private User owner;
+
+    public User getOwner() {
+        return owner;
+    }
+
+    public void setOwner(User owner) {
+        this.owner = owner;
+    }
+
     public ProductDetails getDetails(){
         return details;
     }
