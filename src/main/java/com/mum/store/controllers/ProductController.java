@@ -74,7 +74,7 @@ public class ProductController {
                 try {
                     File file = new File(rootDirectory + "\\resources\\images\\"+ newProduct.getId() + ".png");
                     productImage.transferTo(file);
-                    newProduct.setImagePath(file.getAbsolutePath());
+                    newProduct.getDetails().setImagePath(file.getAbsolutePath());
                 } catch (Exception e) {
                     throw new RuntimeException("Product Image saving failed", e);
                 }

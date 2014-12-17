@@ -2,96 +2,77 @@ package com.mum.store.domain;
 
 import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
+@Entity(name = "product_detail")
 public class ProductDetails {
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
-	private String name;
-	private String description;
 
-	@Column(name = "product_status")
-	private String productStatus;
-	private double price;
-	private User seller;
-	private String reservedOrOpen;
-	private Date postedDate;
-	private String detail;
-	
-	public String getDetail() {
-		return detail;
-	}
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
 
-	public void setDetail(String detail) {
-		this.detail = detail;
-	}
+    private String productStatus;
+    private double price;
+    private Boolean reservedOrOpen;
+    private Date postedDate;
+    private String detail;
+    private String imagePath;
 
-	public long getId() {
-		return id;
-	}
+    public String getDetail() {
+        return detail;
+    }
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    public void setDetail(String detail) {
+        this.detail = detail;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public String getDescription() {
-		return description;
-	}
+    public String getProductStatus() {
+        return productStatus;
+    }
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
+    public void setProductStatus(String productStatus) {
+        this.productStatus = productStatus;
+    }
 
-	public String getProductStatus() {
-		return productStatus;
-	}
+    public double getPrice() {
+        return price;
+    }
 
-	public void setProductStatus(String productStatus) {
-		this.productStatus = productStatus;
-	}
+    public void setPrice(double price) {
+        this.price = price;
+    }
 
-	public double getPrice() {
-		return price;
-	}
+    public Boolean getReservedOrOpen() {
+        return reservedOrOpen;
+    }
 
-	public void setPrice(double price) {
-		this.price = price;
-	}
+    public void setReservedOrOpen(Boolean reservedOrOpen) {
+        this.reservedOrOpen = reservedOrOpen;
+    }
 
-	public User getSeller() {
-		return seller;
-	}
+    public Date getPostedDate() {
+        return postedDate;
+    }
 
-	public void setSeller(User seller) {
-		this.seller = seller;
-	}
+    public void setPostedDate(Date postedDate) {
+        this.postedDate = postedDate;
+    }
 
-	public String getReservedOrOpen() {
-		return reservedOrOpen;
-	}
+    public String getImagePath() {
+        return imagePath;
+    }
 
-	public void setReservedOrOpen(String reservedOrOpen) {
-		this.reservedOrOpen = reservedOrOpen;
-	}
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
+    }
 
-	public Date getPostedDate() {
-		return postedDate;
-	}
-
-	public void setPostedDate(Date postedDate) {
-		this.postedDate = postedDate;
-	}
 
 }
