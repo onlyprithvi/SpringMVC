@@ -29,9 +29,9 @@
                 <div class="moredetails">
                   <div class="seperator">
                     <div class="buttonholder">
-                      <a href="approve?productId=${product.id}"
+                      <a href="<c:url value="/admin/approve?productId=${product.id}"/>"
                          class="viewdetails">Approve</a>
-                      <a href="reject?productId=${product.id}"
+                      <a href="<c:url value="/admin/reject?productId=${product.id}"/>"
                          class="viewdetails">Reject</a>
                     </div>
                   </div>
