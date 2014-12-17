@@ -13,10 +13,20 @@ public class ProductDetails {
 
     private String productStatus;
     private double price;
-    private Boolean reservedOrOpen;
     private Date postedDate;
     private String detail;
     private String imagePath;
+    private String description;
+
+
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public String getDetail() {
         return detail;
@@ -25,13 +35,12 @@ public class ProductDetails {
     public void setDetail(String detail) {
         this.detail = detail;
     }
-
-    public long getId() {
-        return id;
+    public String getDescription() {
+        return description;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getProductStatus() {
@@ -50,13 +59,7 @@ public class ProductDetails {
         this.price = price;
     }
 
-    public Boolean getReservedOrOpen() {
-        return reservedOrOpen;
-    }
 
-    public void setReservedOrOpen(Boolean reservedOrOpen) {
-        this.reservedOrOpen = reservedOrOpen;
-    }
 
     public Date getPostedDate() {
         return postedDate;

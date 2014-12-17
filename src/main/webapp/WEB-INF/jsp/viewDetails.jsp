@@ -40,25 +40,9 @@
 								Abuse</a> <a href="?contactSeller=${product.id}" class="viewdetails">Recommend</a>
 						</div>
 						<h3>${product.name}</h3>
-						<h2>${product.description}</h2>
-						<span class="save">Price: $ ${product.price } </span>
-						<div align="justify">this is a detail desc this is a detail
-							desc this is a detail desc this is a detail desc this is a detail
-							descthis is a detail descthis is a detail descthis is a detail
-							descthis is a detail descthis is a detail descthis is a detail
-							descthis isthis is a detail descthis is a detail descthis is a
-							detail descthis is a detail descthis is a detail descthis is a
-							detail descthis is a detail descthis isthis is a detail descthis
-							is a detail descthis is a detail descthis is a detail descthis is
-							a detail descthis is a detail descthis is a detail descthis
-							isthis is a detail descthis is a detail descthis is a detail
-							descthis is a detail descthis is a detail descthis is a detail
-							descthis is a detail descthis isthis is a detail descthis is a
-							detail descthis is a detail descthis is a detail descthis is a
-							detail descthis is a detail descthis is a detail descthis isthis
-							is a detail descthis is a detail descthis is a detail descthis is
-							a detail descthis is a detail descthis is a detail descthis is a
-							detail descthis is a detail descthis is a detail desc</div>
+						<h2>${product.details.description}</h2>
+						<span class="save">Price: $ ${product.details.price } </span>
+						<div align="justify">${product.details.detail}</div>
 					</div>
 
 				</div>

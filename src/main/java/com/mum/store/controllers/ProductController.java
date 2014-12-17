@@ -40,8 +40,6 @@ public class ProductController {
 	@RequestMapping("/")
 	public String list(Model model) {
 		model.addAttribute(service.viewAllActiveProducts());
-
-        System.out.print(service.viewAllActiveProducts());
 		return "home";
 	}
 
@@ -53,12 +51,9 @@ public class ProductController {
     }
 
     @RequestMapping(value = "/addProduct", method = RequestMethod.POST)
-    public String saveProduct(
-            @ModelAttribute("newProduct") @Valid Product newProduct,
-            BindingResult result, @RequestParam("file") MultipartFile mfile,
-            Model model, HttpServletRequest request) {
-
-        System.out.println("here++++++");
+    public String saveProduct(@ModelAttribute("newProduct") @Valid Product newProduct,
+                                BindingResult result, @RequestParam("file") MultipartFile mfile,
+                                Model model, HttpServletRequest request) {
 
         if (result.hasErrors()) {
             model.addAttribute("status", status);
@@ -69,12 +64,11 @@ public class ProductController {
             MultipartFile productImage = mfile;
             String rootDirectory = request.getSession().getServletContext()
                     .getRealPath("/");
-
             if (productImage != null && !productImage.isEmpty()) {
                 try {
                     File file = new File(rootDirectory + "\\resources\\images\\"+ newProduct.getId() + ".png");
                     productImage.transferTo(file);
-                    newProduct.getDetails().setImagePath(file.getAbsolutePath());
+                    newProduct.getDetails().setImagePath("\\resources\\images\\" + newProduct.getId() + ".png");
                 } catch (Exception e) {
                     throw new RuntimeException("Product Image saving failed", e);
                 }

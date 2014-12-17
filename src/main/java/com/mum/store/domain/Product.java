@@ -11,12 +11,18 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private long id;
+    private Long id;
+
     @Size(min=4,max=50,message="{name.size.validator}")
     private String name;
+    @Column(name = "reservedOrOpenStatus")
+    private Boolean reservedOrOpen;
+
+    @Column(name = "is_approved_by_admin")
+    private Boolean isApprovedByAdmin;
 
     @OneToOne(cascade = {CascadeType.ALL})
-    @JoinColumn(name ="id")
+    @JoinColumn(name ="product_detail_id")
     private ProductDetails details;
 
     public ProductDetails getDetails(){
@@ -27,11 +33,11 @@ public class Product {
         this.details=details;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -41,6 +47,22 @@ public class Product {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Boolean getReservedOrOpen() {
+        return reservedOrOpen;
+    }
+
+    public void setReservedOrOpen(Boolean reservedOrOpen) {
+        this.reservedOrOpen = reservedOrOpen;
+    }
+
+    public Boolean getIsApprovedByAdmin() {
+        return isApprovedByAdmin;
+    }
+
+    public void setIsApprovedByAdmin(Boolean isApprovedByAdmin) {
+        this.isApprovedByAdmin = isApprovedByAdmin;
     }
 
 }

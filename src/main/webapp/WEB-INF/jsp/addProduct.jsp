@@ -25,16 +25,24 @@
         <h1>Add Product</h1>
 
         <form:form modelAttribute="newProduct" action="addProduct" enctype="multipart/form-data">
+            <form:input path="id" type="hidden"/>
             <table>
                 <tr>
                     <td>Product Name:</td>
                     <td><form:input path="name" /></td>
                     <td><form:errors path="name" /></td>
                 </tr>
+
                 <tr>
                     <td>Product Price:</td>
                     <td><form:input path="details.price" type="text" /></td>
                     <td><form:errors path="details.price" /></td>
+                </tr>
+
+                <tr>
+                    <td>Product Description:</td>
+                    <td><form:input path="details.description" type="text" /></td>
+                    <td><form:errors path="details.description" /></td>
                 </tr>
                 <tr>
                     <td>Product Status:</td>
