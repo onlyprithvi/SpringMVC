@@ -1,59 +1,148 @@
 package com.mum.store.domain;
 
 
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
+
+import javax.persistence.*;
+import javax.validation.constraints.Size;
+
+@Entity(name="user")
 public class User {
-	private int userId;
-	private String Fname;
-	private String Lname;
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+	private long id;
+
+    @Size(min=4,max = 40)
+    @Column(name="first_name")
+	private String firstName;
+
+    @Size(min=4,max = 40)
+    @Column(name="last_name")
+	private String lastName;
+
+    @Email
 	private String email;
-	private String phone;
-	private String Address;
 
-	public String getFname() {
-		return Fname;
-	}
+    @Size(max = 3)
+	private String phone1;
+    @Size(max = 3)
+    private String phone2;
+    @Size(max = 4)
+    private String phone3;
+    @NotEmpty
+	private String address1;
+    private String address2;
+    @NotEmpty
+    private String state;
+    @NotEmpty
+    private String country;
+    @NotEmpty
+    private String password;
+    private String role;
 
-	public int getUserId() {
-		return userId;
-	}
+    public String getRole() {
+        return role;
+    }
 
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
+    public void setRole(String role) {
+        this.role = role;
+    }
 
-	public void setFname(String fname) {
-		Fname = fname;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public String getLname() {
-		return Lname;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public void setLname(String lname) {
-		Lname = lname;
-	}
+    public String getFirstName() {
+        return firstName;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public String getLastName() {
+        return lastName;
+    }
 
-	public String getPhone() {
-		return phone;
-	}
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
+    public String getEmail() {
+        return email;
+    }
 
-	public String getAddress() {
-		return Address;
-	}
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-	public void setAddress(String address) {
-		Address = address;
-	}	
+    public String getPhone1() {
+        return phone1;
+    }
+
+    public void setPhone1(String phone1) {
+        this.phone1 = phone1;
+    }
+
+    public String getPhone2() {
+        return phone2;
+    }
+
+    public void setPhone2(String phone2) {
+        this.phone2 = phone2;
+    }
+
+    public String getPhone3() {
+        return phone3;
+    }
+
+    public void setPhone3(String phone3) {
+        this.phone3 = phone3;
+    }
+
+    public String getAddress1() {
+        return address1;
+    }
+
+    public void setAddress1(String address1) {
+        this.address1 = address1;
+    }
+
+    public String getAddress2() {
+        return address2;
+    }
+
+    public void setAddress2(String address2) {
+        this.address2 = address2;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }

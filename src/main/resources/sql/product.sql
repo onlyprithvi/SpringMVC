@@ -26,12 +26,18 @@ USE springmvc;
       );
 
 
-
-	CREATE TABLE USER(
-      id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-      first_name VARCHAR(255),
-      last_name VARCHAR(255),
-      email VARCHAR(255),
-      phone VARCHAR(255),
-      address VARCHAR(255)
+   	CREATE TABLE USER(
+        id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        first_name VARCHAR(255),
+        last_name VARCHAR(255),
+        email VARCHAR(255),
+        phone1 VARCHAR(255),
+        phone2 VARCHAR(255),
+        phone3 VARCHAR(255),
+        address1 VARCHAR(255),
+        address2 VARCHAR(255),
+        state VARCHAR(255),
+        country VARCHAR(255),
+        PASSWORD VARCHAR(255),
+        role VARCHAR(255)
 	);

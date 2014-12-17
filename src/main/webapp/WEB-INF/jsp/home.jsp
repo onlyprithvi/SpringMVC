@@ -13,18 +13,6 @@
 <body>
 <tiles:insertDefinition name="defaultTemplate">
 	<tiles:putAttribute name="body">
-
-		<div class="wrapper">
-			<div class="header" id="top">
-				<div class="userlogin">
-					<ul>
-						<li class="disqus"><a href="recommend" id="sign_up">Sign
-							Up</a></li>
-						<li class="disqus"><a href="login" id="sign_in">Login</a></li>
-					</ul>
-				</div>
-			</div>
-
 		</div>
 		<div class="contentwrapper">
 			<div id="main_data">

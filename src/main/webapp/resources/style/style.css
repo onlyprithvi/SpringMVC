@@ -3087,3 +3087,7 @@ h3 {
 	width: 150px;
 	clear: both
 }
+
+.vaidationError{
+    color: red;
+}
