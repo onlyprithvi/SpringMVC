@@ -43,7 +43,6 @@ CREATE TABLE product (
         is_approved_by_admin  TINYINT(1) DEFAULT FALSE ,
         `product_detail_id` INT(6) NOT NULL,
         owner_id INT(6) default NULL,
-        FOREIGN KEY(owner_id) REFERENCES `user`(`id`),
         FOREIGN KEY(product_detail_id) REFERENCES product_detail(`id`)
     );
 
@@ -51,7 +50,7 @@ CREATE TABLE TRANSACTIONS(
   id INT(6)  AUTO_INCREMENT PRIMARY KEY,
   sellerId int(6) NOT NULL,
   buyerId int(6) NOT NULL,
-  transationDate Date NOT NULL,
+  transactionDate Date NOT NULL,
   productId int(6) NOT NULL,
   Foreign key(buyerId) REFERENCES USER (id),
   Foreign key(sellerId) REFERENCES USER (id),

@@ -20,13 +20,19 @@
 					<div class="productDetailbox">
 						<img src="<c:url value="${product.details.imagePath}" />"
 							height="200" width="200">
-						<div class="buttonholderView">
-							<a href="reserve?productId=${product.id}" class="viewdetails">
-								<spring:message code="page.viewdetail.link.reserve.text" />
-							</a>
-							<a href="contactSeller?productId=${product.id}" class="viewdetails">
-								<spring:message code="page.viewdetail.link.contactseller.text" />
-							</a>
+						    <c:if test="${userSession!=null}">
+                                <div class="buttonholderView">
+                                    <c:choose>
+                                        <c:when test="${product.isApprovedByAdmin!=true}">
+                                            <a href="reserve?productId=${product.id}" class="viewdetails"><spring:message code="page.viewdetail.link.reserve.text" /></a>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <span class="viewdetails" style="background: red">Already Reserved</span>
+                                        </c:otherwise>
+                                    </c:choose>
+                                    <a href="contactSeller?sellerId=${product.owner}" class="viewdetails"><spring:message code="page.viewdetail.link.contactseller.text" /></a>
+                                </div>
+                            </c:if>
 							<a href="report?productId=${product.id}" class="viewdetails">
 								<spring:message code="page.viewdetail.link.reportabuse.text" />
 							</a> 

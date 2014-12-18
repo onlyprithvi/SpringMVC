@@ -25,15 +25,15 @@ public class Product {
     @JoinColumn(name ="product_detail_id")
     private ProductDetails details;
 
-    @OneToOne(cascade = {CascadeType.ALL})
-    @JoinColumn(name ="owner_id")
-    private User owner;
 
-    public User getOwner() {
+    @Column(name ="owner_id")
+    private long owner;
+
+    public long getOwner() {
         return owner;
     }
 
-    public void setOwner(User owner) {
+    public void setOwner(long owner) {
         this.owner = owner;
     }
 

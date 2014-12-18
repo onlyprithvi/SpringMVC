@@ -10,7 +10,8 @@
 <title>Login</title>
 </head>
 <body>
-
+<tiles:insertDefinition name="defaultTemplate">
+<tiles:putAttribute name="body">
 	<div class="container">
 		<div class="row">
 			<h3 class="panel-title"><spring:message code="page.login.signin.text" /></h3>
@@ -41,6 +42,6 @@
 			</form>
 		</div>
 	</div>
-
+</tiles:putAttribute></tiles:insertDefinition>
 </body>
 </html>

@@ -3,15 +3,13 @@ package com.mum.store.controllers;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
+import com.mum.store.domain.User;
 import com.mum.store.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -19,11 +17,13 @@ import com.mum.store.domain.Product;
 import com.mum.store.services.ProductService;
 
 import java.io.File;
+import java.security.Principal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
+@SessionAttributes("userSession")
 @Controller
 public class ProductController {
 
@@ -43,8 +43,11 @@ public class ProductController {
     }
 
 	@RequestMapping("/")
-	public String list(Model model) {
-		model.addAttribute(service.viewAllActiveProducts());
+	public String list(Model model,Principal principal) {
+        if(principal!=null){
+            model.addAttribute("userSession", userService.getUserByName(principal.getName()));
+        }
+        model.addAttribute(service.viewAllActiveProducts());
 		return "home";
 	}
 
@@ -71,15 +74,17 @@ public class ProductController {
             if (productImage != null && !productImage.isEmpty()) {
                 try {
                     int randNumber=new Random().nextInt();
-                    String filePath = rootDirectory + "\\resources\\images\\"+ randNumber + ".png";
+                    String filePath = rootDirectory + "\\resources\\images\\"+ randNumber + ".jpg";
                     File file = new File(filePath);
                     productImage.transferTo(file);
-                    newProduct.getDetails().setImagePath("resources/images/" + randNumber + ".png");
+                    newProduct.getDetails().setImagePath("resources/images/" + randNumber + ".jpg");
                 } catch (Exception e) {
                     throw new RuntimeException("Product Image saving failed", e);
                 }
             }
 
+            User owner =(User)request.getSession().getAttribute("userSession");
+            newProduct.setOwner(owner.getId());
             service.addProducts(newProduct);
             return "redirect:/";
         }
@@ -92,5 +97,13 @@ public class ProductController {
 		mv.setViewName("viewDetails");
 		return mv;
 	}
+
+    @RequestMapping("/contactSeller")
+    public String contactSeller(Model model,@RequestParam("sellerId") long uId){
+
+        User user = userService.getUser(uId);
+        model.addAttribute("userDetails",user);
+        return "user/contactSeller";
+    }
 	
 }

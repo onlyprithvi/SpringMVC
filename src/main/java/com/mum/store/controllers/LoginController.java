@@ -4,6 +4,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.support.SessionStatus;
+
+import java.security.Principal;
 
 @Controller
 public class LoginController {
@@ -20,7 +23,9 @@ public class LoginController {
 	}
 	
 	@RequestMapping( value = "/logout", method = RequestMethod.GET)
-	public String logout(Model model){
-		return "login";
+	public String logout(Model model,SessionStatus status,Principal principal){
+        principal=null;
+        status.setComplete();
+		return "redirect:/login";
 	}
 }

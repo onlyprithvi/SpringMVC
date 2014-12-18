@@ -32,6 +32,7 @@ public class TransactionServiceImpl implements TransactionService{
         transaction.setBuyer(user);
         transaction.setSeller(user);
         transaction.setTransactionDate(new Date());
+        transaction.setProduct(p);
         repository.save(transaction);
     }
 }
