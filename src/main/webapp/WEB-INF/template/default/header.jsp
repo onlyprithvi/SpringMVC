@@ -16,6 +16,7 @@
         <c:otherwise>
             <li class="disqus"><a href="<c:url value="j_spring_security_logout" />" id="sign_up">Log Out</a></li>
             <li class="disqus"><a href="<c:url value="/addProduct" />" id="sign_up">Add product</a></li>
+            <li class="disqus"><a href="<c:url value="/user/showHistory" />" id="sign_up">View history</a></li>
         </c:otherwise>
     </c:choose>
             </ul>

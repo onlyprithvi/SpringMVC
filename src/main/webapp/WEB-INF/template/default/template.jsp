@@ -3,6 +3,7 @@
 <html>
     <head>
         <link href="<c:url value="/resources/style/style.css" />" rel="stylesheet">
+        <script type="text/javascript" src="<c:url value="/resources/js/jquery-1.11.1.min.js" />"></script>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Default tiles template</title>
 

@@ -145,4 +145,12 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public String getFullName(){
+        return firstName + " "+lastName;
+    }
+
+    public String getPhoneNumber(){
+        return phone1.toString() + " - " + phone2.toString() + " - " +phone3.toString();
+    }
 }

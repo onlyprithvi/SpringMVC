@@ -21,7 +21,13 @@ public class ProductServiceImpl implements ProductService {
 	@Autowired
 	ProductRepository repository;
 
-	@Override
+    @Override
+    public List<Product> viewAllProductsByUserId(long id) {
+        return repository.getAllProductsByUser(id);
+    }
+
+
+    @Override
 	public List<Product> viewAllActiveProducts() {
 		return (List<Product>) repository.getAllApprovedProducts();
 	}

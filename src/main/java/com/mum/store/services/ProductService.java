@@ -14,4 +14,6 @@ public interface ProductService {
 	public List<Product> viewProductIdByTag();
 
 	public void addProducts(Product p);
+
+    public List<Product> viewAllProductsByUserId(long id);
 }

@@ -99,11 +99,18 @@ public class ProductController {
 	}
 
     @RequestMapping("/contactSeller")
-    public String contactSeller(Model model,@RequestParam("sellerId") long uId){
+    public @ResponseBody String contactSeller(Model model,@RequestParam("sellerId") long uId){
 
         User user = userService.getUser(uId);
-        model.addAttribute("userDetails",user);
-        return "user/contactSeller";
+
+        String returnString = user.getFullName() + "<br/>" +
+                              user.getPhoneNumber()+"<br/>"+
+                            user.getAddress1()+"<br/>"+
+                            user.getAddress2()+"<br/>"+
+                            user.getState()+"<br/>"+
+                            user.getCountry()+"<br/>";
+
+        return returnString;
     }
 	
 }

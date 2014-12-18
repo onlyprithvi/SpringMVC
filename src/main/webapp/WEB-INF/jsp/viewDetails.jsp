@@ -7,8 +7,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<link href="<c:url value="resources/style/style.css" />"
-	rel="stylesheet">
+<link href="<c:url value="resources/style/style.css" />"rel="stylesheet">
+
+    <script type="application/javascript">
+            function viewSeller(a){
+                $.ajax({
+                    url: "contactSeller?sellerId="+a,
+                    type:'GET',
+                    success: function(result){
+                        $("#sellerDetail").empty().html(result);
+                    }
+                });
+            }
+    </script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Project 404 - View details</title>
 </head>
@@ -30,7 +41,7 @@
                                             <span class="viewdetails" style="background: red">Already Reserved</span>
                                         </c:otherwise>
                                     </c:choose>
-                                    <a href="contactSeller?sellerId=${product.owner}" class="viewdetails"><spring:message code="page.viewdetail.link.contactseller.text" /></a>
+                                    <a href="#" class="viewdetails" id="viewSeller" onclick="viewSeller('${product.owner}');"><spring:message code="page.viewdetail.link.contactseller.text" /></a>
                                 </div>
                             </c:if>
 							<a href="report?productId=${product.id}" class="viewdetails">
@@ -44,9 +55,10 @@
 						<span class="save">Price: $ ${product.details.price } </span>
 						<div align="justify">${product.details.detail}</div>
 					</div>
-
+                    <div id="sellerDetail"></div>
 				</div>
 			</div>
+
 		</tiles:putAttribute>
 	</tiles:insertDefinition>
 </body>
