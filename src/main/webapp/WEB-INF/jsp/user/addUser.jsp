@@ -28,9 +28,9 @@
                   <td><form:errors path="lastName" class="vaidationError"/> </td>
               </tr>
               <tr>
-                  <td>Email</td>
-                  <td><form:input path="email"/></td>
-                  <td><form:errors path="email" class="vaidationError"/> </td>
+                  <td>Email/UserName</td>
+                  <td><form:input path="username"/></td>
+                  <td><form:errors path="username" class="vaidationError"/> </td>
               </tr>
               <tr>
                   <td>Password</td>
