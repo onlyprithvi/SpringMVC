@@ -17,7 +17,11 @@
     <div class="contentwrapper">
       <div id="main_data">
         <div class="content">
-<h1>${message}</h1>
+<h1>${message}
+          <div class="buttonholder">
+          <a href="<c:url value="/admin/ViewAllRejected"/>"
+             class="viewdetails">Manage Rejected</a>
+        </div></h1>
           <c:forEach var="product" items="${requestforApproval}">
             <div class="productbox">
               <img src="<c:url value="resources/images/banner.png" />"

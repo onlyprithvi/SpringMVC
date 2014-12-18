@@ -59,8 +59,6 @@ public class ProductDetails {
         this.price = price;
     }
 
-
-
     public Date getPostedDate() {
         return postedDate;
     }
