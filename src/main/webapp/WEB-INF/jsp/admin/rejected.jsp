@@ -23,8 +23,8 @@
 </div></h1>
           <c:forEach var="product" items="${requestforApproval}">
             <div class="productbox">
-              <img src="<c:url value="resources/images/banner.png" />"
-                   height="240" width="240">
+                <img src="<c:url value="${product.details.imagePath}" />"
+                     height="200" width="200">
               <div class="productdesc">
                 <h3>${product.name}</h3>
                 <h2>${product.details.description}</h2>
