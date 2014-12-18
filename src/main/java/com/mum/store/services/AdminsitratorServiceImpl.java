@@ -16,6 +16,8 @@ import java.util.List;
 @Service
 
 public class AdminsitratorServiceImpl implements AdminstrationService{
+
+
     @Autowired
     AdministratorRepository repository;
 
@@ -50,7 +52,17 @@ public class AdminsitratorServiceImpl implements AdminstrationService{
     }
 
     @Override
+    public void delete(Product product) {
+        repository.delete(product);
+    }
+
+    @Override
     public Product getProductById(String id) {
         return repository.findOne((long) Float.parseFloat(id));
+    }
+
+    @Override
+    public List<Product> getAllRejectedProducts() {
+        return (List<Product>) repository.getAllRejectedProducts();
     }
 }

@@ -18,6 +18,9 @@ public interface AdministratorRepository extends CrudRepository<Product,Long>{
     @Query("SELECT p from PRODUCT p where p.isApprovedByAdmin <> true")
     List<Product> getAllPendingProducts();
 
+    @Query("SELECT p from PRODUCT p where p.isApprovedByAdmin is NULL")
+    List<Product> getAllRejectedProducts();
+
     //List<Product> getAllProducts();
     //List<Product> getAllApprovedProducts();
 

@@ -20,10 +20,10 @@
 						<img src="<c:url value="${product.details.imagePath}" />"
 							height="200" width="200">
 						<div class="buttonholderView">
-							<a href="?reserve=${product.id}" class="viewdetails">Reserve</a>
-							<a href="?contactSeller=${product.id}" class="viewdetails">Contact
-								Seller</a> <a href="?reserve=${product.id}" class="viewdetails">Report
-								Abuse</a> <a href="?contactSeller=${product.id}" class="viewdetails">Recommend</a>
+							<a href="reserve?productId=${product.id}" class="viewdetails">Reserve</a>
+							<a href="contactSeller?productId=${product.id}" class="viewdetails">Contact
+								Seller</a> <a href="report?productId=${product.id}" class="viewdetails">Report
+								Abuse</a> <a href="contactSeller?productId=${product.id}" class="viewdetails">Recommend</a>
 						</div>
 						<h3>${product.name}</h3>
 						<h2>${product.details.description}</h2>

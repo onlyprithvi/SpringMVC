@@ -31,8 +31,8 @@
                     <div class="buttonholder">
                       <a href="<c:url value="/admin/approve?productId=${product.id}"/>"
                          class="viewdetails">Approve</a>
-                      <a href="<c:url value="/admin/reject?productId=${product.id}"/>"
-                         class="viewdetails">Reject</a>
+                      <a href="<c:url value="/admin/delete?productId=${product.id}"/>"
+                         class="viewdetails">Delete</a>
                     </div>
                   </div>
                   <br>

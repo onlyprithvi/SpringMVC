@@ -21,4 +21,7 @@ public interface AdminstrationService {
     public List<Product> getAllPendingApprovals();
     public void save(Product product);
     public Product getProductById(String id);
+    public List<Product> getAllRejectedProducts();
+    public void delete(Product product);
+
 }

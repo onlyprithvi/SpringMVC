@@ -20,7 +20,7 @@ public class AdministrationController {
 
     @RequestMapping
   public  String viewApprovalRequest(Model model) {
-
+        model.addAttribute("message","ALL APPROVED REQUEST");
         model.addAttribute("requestforApproval", service.getAllPendingApprovals());
         return "admin/approvalRequest";
     }
@@ -40,5 +40,19 @@ public class AdministrationController {
         product.setIsApprovedByAdmin(null);
         service.save(product);
         return "redirect:/admin";
+    }
+
+    @RequestMapping("/ViewAllRejected")
+    public String viewRejected(Model model) {
+        model.addAttribute("message","ALL REJECTED");
+        model.addAttribute("requestforApproval", service.getAllRejectedProducts());
+        return "admin/rejected";
+    }
+
+    @RequestMapping("/delete")
+    public String delete(@RequestParam("productId") String id) {
+        Product product=service.getProductById(id);
+        service.delete(product);
+        return "redirect:/admin/ViewAllRejected";
     }
 }
