@@ -23,7 +23,7 @@ public class User {
 	private String lastName;
 
     @Email
-	private String email;
+	private String username;
 
     @Size(max = 3)
 	private String phone1;
@@ -74,12 +74,12 @@ public class User {
         this.lastName = lastName;
     }
 
-    public String getEmail() {
-        return email;
+    public String getUsername() {
+        return username;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUserName(String userName) {
+        this.username = userName;
     }
 
     public String getPhone1() {
