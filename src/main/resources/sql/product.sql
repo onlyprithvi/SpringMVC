@@ -31,7 +31,7 @@ USE springmvc;
         id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
         first_name VARCHAR(255),
         last_name VARCHAR(255),
-        email VARCHAR(255),
+        username VARCHAR(255),
         phone1 VARCHAR(255),
         phone2 VARCHAR(255),
         phone3 VARCHAR(255),
@@ -39,6 +39,7 @@ USE springmvc;
         address2 VARCHAR(255),
         state VARCHAR(255),
         country VARCHAR(255),
-        PASSWORD VARCHAR(255),
-        role VARCHAR(255)
+        password VARCHAR(255),
+        role VARCHAR(255),
+        enabled TINYINT(1) default 1
 	);
