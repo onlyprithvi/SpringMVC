@@ -23,9 +23,9 @@
 							<img src="<c:url value="${product.details.imagePath}" />"
 								 height="240" width="240">
 							<div class="productdesc">
-								<h3>${product.name}</h3>
-								<h2>${product.details.description}</h2>
-								<span class="save"><spring:message code="page.home.price.text" /> $ ${product.details.price}</span>
+								<h2>${product.name}</h2>
+								<div>${product.details.description}</div>
+								<div ><spring:message code="page.home.price.text" /> $ ${product.details.price}</div>
 								<div class="moredetails">
 									<div class="seperator">
 										<div class="buttonholder">

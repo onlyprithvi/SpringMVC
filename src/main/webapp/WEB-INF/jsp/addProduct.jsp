@@ -8,7 +8,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>Add Title</title>
+    <title>SYS - Add New Stuff</title>
 
     <script src="//tinymce.cachefly.net/4.1/tinymce.min.js"></script>
     <script>
@@ -22,7 +22,9 @@
 <body>
 <tiles:insertDefinition name="defaultTemplate">
     <tiles:putAttribute name="body">
-        <h1>Add Product</h1>
+        <div class="form-container">
+
+        <h1 class="main-title">Add Stuff</h1>
 
         <form:form modelAttribute="newProduct" action="addProduct" enctype="multipart/form-data">
             <form:input path="id" type="hidden"/>
@@ -47,7 +49,7 @@
                 <tr>
                     <td>Product Status:</td>
                     <td><form:select path="details.productStatus">
-                        <form:option value="">--Select</form:option>
+                        <form:option value=""> Select Status</form:option>
                         <form:options items="${status}" />
                     </form:select></td>
                     <td><form:errors path="details.productStatus" /></td>
@@ -65,11 +67,12 @@
                     <td colspan="3"><form:textarea path="details.detail"/></td>
                 </tr>
                 <tr>
-                    <td colspan=3><input type="submit" value="Add" /></td>
+                    <td colspan=3><input class="btn btn-lg btn-success btn-block" type="submit" value="Add" /></td>
                 </tr>
             </table>
 
         </form:form>
+        </div>
     </tiles:putAttribute>
 </tiles:insertDefinition>
 

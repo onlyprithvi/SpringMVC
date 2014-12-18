@@ -13,7 +13,7 @@
 <tiles:insertDefinition name="defaultTemplate">
 <tiles:putAttribute name="body">
 	<div class="container">
-		<div class="row">
+		<div class="row login-form ">
 			<h3 class="panel-title"><spring:message code="page.login.signin.text" /></h3>
 
 			<c:if test="${not empty error}">
@@ -35,7 +35,7 @@
 							name='password' type="password" value="">
 					</div>
 
-					<input class="btn btn-lg btn-success btn-block" type="submit"
+					<input style="width: 225px;" class="btn btn-lg btn-success btn-block" type="submit"
 						value='<spring:message code="page.login.form.submit.text" />' />
 
 				</fieldset>

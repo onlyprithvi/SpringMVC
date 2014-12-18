@@ -27,9 +27,9 @@
               <img src="<c:url value="${product.details.imagePath}" />"
                    height="200" width="200">
               <div class="productdesc">
-                <h3>${product.name}</h3>
-                <h2>${product.details.description}</h2>
-                <span class="save">Price: $ ${product.details.price} }</span>
+                <h2>${product.name}</h2>
+                <div>${product.details.description}</div>
+                <div ><strong>Price:</strong> $ ${product.details.price}</div>
                 <div class="moredetails">
                   <div class="seperator">
                     <div class="buttonholder">

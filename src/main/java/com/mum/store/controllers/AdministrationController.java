@@ -20,7 +20,7 @@ public class AdministrationController {
 
     @RequestMapping
   public  String viewApprovalRequest(Model model) {
-        model.addAttribute("message","ALL APPROVED REQUEST");
+        model.addAttribute("message","ALL PENDING STUFFS");
         model.addAttribute("requestforApproval", service.getAllPendingApprovals());
         return "admin/approvalRequest";
     }

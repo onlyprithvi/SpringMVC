@@ -31,6 +31,12 @@
 					<div class="productDetailbox">
 						<img src="<c:url value="${product.details.imagePath}" />"
 							height="200" width="200">
+
+                        <h2>${product.name}</h2>
+                        <div>${product.details.description}</div>
+                        <div >Price: $ ${product.details.price } </div>
+                        <div align="justify">${product.details.detail}</div>
+                        <div class="buttonholder">
 						    <c:if test="${userSession!=null}">
                                 <div class="buttonholderView">
                                     <c:choose>
@@ -46,14 +52,12 @@
                             </c:if>
 							<a href="report?productId=${product.id}" class="viewdetails">
 								<spring:message code="page.viewdetail.link.reportabuse.text" />
-							</a> 
+							</a>
 							<a href="contactSeller?productId=${product.id}" class="viewdetails">
-								<spring:message code="page.viewdetail.link.recommend.text" />Recommend</a>
+								<spring:message code="page.viewdetail.link.recommend.text" /></a>
 						</div>
-						<h3>${product.name}</h3>
-						<h2>${product.details.description}</h2>
-						<span class="save">Price: $ ${product.details.price } </span>
-						<div align="justify">${product.details.detail}</div>
+                        </div>
+
 					</div>
                     <div id="sellerDetail"></div>
 				</div>
