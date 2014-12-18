@@ -20,6 +20,7 @@
             <li class="disqus"><a href="<c:url value="/" />" id="sign_up">Home</a></li>
         </c:otherwise>
     </c:choose>
+                <li class="disqus"><a href="<c:url value="/aboutus.jsp" />" id="sign_up">About us</a></li>
             </ul>
         </div>
     </div>
