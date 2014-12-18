@@ -22,7 +22,7 @@ public class User {
     @Column(name="last_name")
 	private String lastName;
 
-    @Email
+//    @Email
 	private String username;
 
     @Size(max = 3)

@@ -29,7 +29,7 @@
               </tr>
               <tr>
                   <td>Email/UserName</td>
-                  <td><form:input path="username"/></td>
+                  <td><input type="text" name="user"/></td>
                   <td><form:errors path="username" class="vaidationError"/> </td>
               </tr>
               <tr>
@@ -69,7 +69,7 @@
               <tr>
                   <td colspan="3"><input type="submit" value="Register"/></td>
               </tr>
-
+                <form:input path="role" type="hidden" value="ROLE_USER"/>
 
           </table>
       </form:form>
