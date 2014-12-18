@@ -28,7 +28,7 @@
               <div class="productdesc">
                 <h3>${product.name}</h3>
                 <h2>${product.details.description}</h2>
-                <span class="save">Price: $ ${product.details.price} }</span>
+                <span class="save">Price: $ ${product.details.price}</span>
                 <div class="moredetails">
                   <div class="seperator">
                     <div class="buttonholder">

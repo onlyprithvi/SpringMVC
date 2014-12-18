@@ -1,6 +1,6 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<div class="headerTemplate">
-Maharshi University Give and Take and Buy
+<div class="headerTemplate mast-head">
+<h1>Sell Your Stuff</h1>
 </div>
 
 

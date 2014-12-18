@@ -8,13 +8,38 @@ address, caption, cite, code, dfn, em, strong, th, var {
 	font-style: normal;
 	font-weight: normal
 }
-
+html{
+	height:100%;
+	overflow-x: hidden;
+}
 body {
+	margin:0px;
+	padding:0px;
+	height:100%;
+	background:#ccc;
+	margin:50px 10px 0px 250px;
 	margin: 0;
 	padding: 0;
 	font: 12px/18px Arial, Helvetica, sans-serif;
 	color: #000;
-	background: #fff;
+}
+.page {
+	min-height:100%;
+	position:relative;
+}
+
+
+.headerTemplate {
+	padding:35px;
+	width:100%;
+	text-align:center;
+	background: #dddddd;
+	overflow:hidden;
+}
+.menu {
+	padding:50px 10px 0px 10px;
+	width:200px;
+	float:left;
 }
 
 * {
@@ -22,6 +47,17 @@ body {
 	padding: 0;
 	outline: 0
 }
+.footer {
+	clear:both;
+	left:0;
+	text-align:center;
+	width:100%;
+	background: #dddddd;
+	margin-top: -78px;
+	padding:30px;
+}
+
+
 
 .clear {
 	clear: both;
@@ -117,6 +153,7 @@ h6 {
 .wrapper {
 	margin: 0 auto;
 	width: 977px
+	overflow:hidden;
 }
 
 .contentwrapper {
@@ -419,15 +456,7 @@ h6 {
 	-moz-border-radius: 4px;
 	border-radius: 4px;
 	padding: 0 5px 0 5px;
-	background: #743ea6;
-	background: -webkit-gradient(linear, 0 0, 0 bottom, from(#61358b),
-		to(#4a2f64));
-	background: -webkit-linear-gradient(#61358b, #4a2f64);
-	background: -moz-linear-gradient(#61358b, #4a2f64);
-	background: -ms-linear-gradient(#61358b, #4a2f64);
-	background: -o-linear-gradient(#61358b, #4a2f64);
-	background: linear-gradient(#61358b, #4a2f64);
-	-pie-background: linear-gradient(#61358b, #4a2f64)
+	background: #999;
 }
 
 .disqus:hover {
@@ -436,15 +465,7 @@ h6 {
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
-	background: #743ea6;
-	background: -webkit-gradient(linear, 0 0, 0 bottom, from(#743ea6),
-		to(#5d3482));
-	background: -webkit-linear-gradient(#743ea6, #5d3482);
-	background: -moz-linear-gradient(#743ea6, #5d3482);
-	background: -ms-linear-gradient(#743ea6, #5d3482);
-	background: -o-linear-gradient(#743ea6, #5d3482);
-	background: linear-gradient(#743ea6, #5d3482);
-	-pie-background: linear-gradient(#743ea6, #5d3482)
+	background: #777;
 }
 
 .disqus a {
@@ -464,14 +485,6 @@ h6 {
 	border-radius: 4px;
 	padding: 0 5px 0 5px;
 	background: #743ea6;
-	background: -webkit-gradient(linear, 0 0, 0 bottom, from(#61358b),
-		to(#4a2f64));
-	background: -webkit-linear-gradient(#61358b, #4a2f64);
-	background: -moz-linear-gradient(#61358b, #4a2f64);
-	background: -ms-linear-gradient(#61358b, #4a2f64);
-	background: -o-linear-gradient(#61358b, #4a2f64);
-	background: linear-gradient(#61358b, #4a2f64);
-	-pie-background: linear-gradient(#61358b, #4a2f64)
 }
 
 .signup:hover {
@@ -481,14 +494,6 @@ h6 {
 	-moz-border-radius: 4px;
 	border-radius: 4px;
 	background: #743ea6;
-	background: -webkit-gradient(linear, 0 0, 0 bottom, from(#743ea6),
-		to(#5d3482));
-	background: -webkit-linear-gradient(#743ea6, #5d3482);
-	background: -moz-linear-gradient(#743ea6, #5d3482);
-	background: -ms-linear-gradient(#743ea6, #5d3482);
-	background: -o-linear-gradient(#743ea6, #5d3482);
-	background: linear-gradient(#743ea6, #5d3482);
-	-pie-background: linear-gradient(#743ea6, #5d3482)
 }
 
 .signup a {
@@ -508,14 +513,6 @@ h6 {
 	border-radius: 4px;
 	padding: 0 5px 0 5px;
 	background: #69b9b4;
-	background: -webkit-gradient(linear, 0 0, 0 bottom, from(#69b9b4),
-		to(#579a96));
-	background: -webkit-linear-gradient(#69b9b4, #579a96);
-	background: -moz-linear-gradient(#69b9b4, #579a96);
-	background: -ms-linear-gradient(#69b9b4, #579a96);
-	background: -o-linear-gradient(#69b9b4, #579a96);
-	background: linear-gradient(#69b9b4, #579a96);
-	-pie-background: linear-gradient(#69b9b4, #579a96)
 }
 
 .login:hover {
@@ -3090,4 +3087,10 @@ h3 {
 
 .vaidationError{
     color: red;
+}
+
+.mast-head h1{
+	font-size: 45px;
+	text-shadow: 3px 2px 1px #999;
+	text-transform: uppercase;
 }
