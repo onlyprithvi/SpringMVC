@@ -40,7 +40,7 @@
 						    <c:if test="${userSession!=null}">
                                 <div class="buttonholderView">
                                     <c:choose>
-                                        <c:when test="${product.isApprovedByAdmin!=true}">
+                                        <c:when test="${product.reservedOrOpen!=true}">
                                             <a href="reserve?productId=${product.id}" class="viewdetails"><spring:message code="page.viewdetail.link.reserve.text" /></a>
                                         </c:when>
                                         <c:otherwise>

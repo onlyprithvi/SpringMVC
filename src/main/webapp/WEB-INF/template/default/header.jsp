@@ -11,7 +11,7 @@
     <c:choose>
         <c:when test="${userSession==null}">
                         <li class="disqus"><a href="<c:url value="/user/addUser" />" id="sign_up">SignUp</a></li>
-                        <li class="disqus"><a href="login" id="sign_in">Login</a></li>
+                        <li class="disqus"><a href="<c:url value="/login" />" id="sign_in">Login</a></li>
         </c:when>
         <c:otherwise>
             <li class="disqus"><a href="<c:url value="j_spring_security_logout" />" id="sign_up">Log Out</a></li>

@@ -1,6 +1,3 @@
-CREATE DATABASE IF NOT EXISTS springmvc;
-
-USE springmvc;
 
 Drop table if EXISTS TRANSACTIONS;
 Drop table if EXISTS product;
@@ -56,3 +53,10 @@ CREATE TABLE TRANSACTIONS(
   Foreign key(sellerId) REFERENCES USER (id),
  Foreign key(productId) REFERENCES product (id) 
 );
+
+INSERT INTO USER(first_name,last_name,username,phone1,phone2,phone3,address1,address2,state,country,PASSWORD,role,enabled)
+VALUES
+('Admin','Admin','admin@gmail.com','644','256','5677','1000 4th','north street','New York','USA','admin','ROLE_ADMIN',1),
+('Prithvi','Adhikari','prithvi@gmail.com','644','256','5677','1000 4th','north street','IA','USA','admin','ROLE_USER',1),
+('Suraj','Byanju','suraj@gmail.com','644','256','5677','1000 4th','north street','IA','USA','admin','ROLE_USER',1),
+('Dharma','poudel','dharma@gmail.com','644','256','5677','1000 4th','north street','IA','USA','admin','ROLE_USER',1);
