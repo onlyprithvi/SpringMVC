@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -9,7 +10,7 @@
 <link href="<c:url value="resources/style/style.css" />"
 	rel="stylesheet">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Project404</title>
+<title>Project 404 - View details</title>
 </head>
 <body>
 	<tiles:insertDefinition name="defaultTemplate">
@@ -20,10 +21,17 @@
 						<img src="<c:url value="${product.details.imagePath}" />"
 							height="200" width="200">
 						<div class="buttonholderView">
-							<a href="reserve?productId=${product.id}" class="viewdetails">Reserve</a>
-							<a href="contactSeller?productId=${product.id}" class="viewdetails">Contact
-								Seller</a> <a href="report?productId=${product.id}" class="viewdetails">Report
-								Abuse</a> <a href="contactSeller?productId=${product.id}" class="viewdetails">Recommend</a>
+							<a href="reserve?productId=${product.id}" class="viewdetails">
+								<spring:message code="page.viewdetail.link.reserve.text" />
+							</a>
+							<a href="contactSeller?productId=${product.id}" class="viewdetails">
+								<spring:message code="page.viewdetail.link.contactseller.text" />
+							</a>
+							<a href="report?productId=${product.id}" class="viewdetails">
+								<spring:message code="page.viewdetail.link.reportabuse.text" />
+							</a> 
+							<a href="contactSeller?productId=${product.id}" class="viewdetails">
+								<spring:message code="page.viewdetail.link.recommend.text" />Recommend</a>
 						</div>
 						<h3>${product.name}</h3>
 						<h2>${product.details.description}</h2>

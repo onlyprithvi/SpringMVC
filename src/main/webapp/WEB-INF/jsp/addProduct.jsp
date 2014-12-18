@@ -8,7 +8,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>Insert title here</title>
+    <title>Add Title</title>
 
     <script src="//tinymce.cachefly.net/4.1/tinymce.min.js"></script>
     <script>
